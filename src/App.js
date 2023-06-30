@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { createGlobalStyle } from "styled-components";
+import Headers from "./components/Headers";
+import Brand from "./components/Brand";
+import Details from "./components/Details";
+import Counter from "./components/Counter";
+import Cart from "./components/Cart";
+import Offer from "./components/Offer";
+import Footer from "./components/Footer";
 
-function App() {
+let App = () => {
+  const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'Inter';
+    src: url('/path-to-your-font/inter.woff2') format('woff2'),
+         url('/path-to-your-font/inter.woff') format('woff');
+ 
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+
+  }`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Headers />
+      <Brand />
+      <Details/>
+      <Counter/>
+      <Cart/>
+      <Offer/>
+      <Footer/>
+    </>
   );
-}
+};
 
 export default App;
